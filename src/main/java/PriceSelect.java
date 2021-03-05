@@ -17,7 +17,7 @@ public class PriceSelect extends UserTest {
         statement = connection.createStatement();
 
 
-        ResultSet resultSet = statement.executeQuery("select * from price where id=?");
+        ResultSet resultSet = statement.executeQuery("select * from price where id=1");
         ArrayList<Price> arrayList = null;
         Price price = null;
         while (resultSet.next()) {

@@ -38,11 +38,11 @@ public class UserTest {
         return user;
     }
 
-    public int updateusermoney(Integer money, Integer price) throws SQLException {
+    public int updateusermoney(Integer money) throws SQLException {
         String sql = "update t_order set money=? where id=1";
         Connection conn = TestConnectMysql.getConnection();
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setInt(1, price);
+        statement.setInt(1, money);
         int i = statement.executeUpdate();
         statement.close();
         if (i == 1) {
