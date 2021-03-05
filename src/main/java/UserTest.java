@@ -3,7 +3,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Testselect {
+public class UserTest {
     public User Userselect() throws SQLException {
 
         String id = null;
@@ -37,17 +37,19 @@ public class Testselect {
 
         return user;
     }
-    public int updatemoney(Integer id,Integer money,Integer price) throws SQLException {
-        String sql="update t_order set money=? where id=?";
+
+    public int updateusermoney(Integer money, Integer price) throws SQLException {
+        String sql = "update t_order set money=? where id=1";
         Connection conn = TestConnectMysql.getConnection();
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setInt(1,id);
-        statement.setInt(2,money);
+        statement.setInt(1, price);
         int i = statement.executeUpdate();
         statement.close();
-        if(i==1){
+        if (i == 1) {
             System.out.print("修改成功");
         }
         return i;
+
+
     }
 }
